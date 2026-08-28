@@ -1,0 +1,30 @@
+[project]
+name = "mobuex"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Henrik Wilhelmsen", email = "henrik@hwanimation.tech" }
+]
+requires-python = ">=3.11"
+
+dependencies = [
+    "dccex",
+]
+
+[project.scripts]
+mobu2024 = "mobuex:mobu2024"
+mobupy2024 = "mobuex:mobupy2024"
+mobu2025 = "mobuex:mobu2025"
+mobupy2025 = "mobuex:mobupy2025"
+mobu2026 = "mobuex:mobu2026"
+mobupy2026 = "mobuex:mobupy2026"
+mobu2027 = "mobuex:mobu2027"
+mobupy2027 = "mobuex:mobupy2027"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+dccex = { workspace = true }

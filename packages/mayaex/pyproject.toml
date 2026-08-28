@@ -1,0 +1,30 @@
+[project]
+name = "mayaex"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Henrik Wilhelmsen", email = "henrik@hwanimation.tech" }
+]
+requires-python = ">=3.11"
+
+dependencies = [
+    "dccex",
+]
+
+[project.scripts]
+maya2024 = "mayaex:maya2024"
+mayapy2024 = "mayaex:mayapy2024"
+maya2025 = "mayaex:maya2025"
+mayapy2025 = "mayaex:mayapy2025"
+maya2026 = "mayaex:maya2026"
+mayapy2026 = "mayaex:mayapy2026"
+maya2027 = "mayaex:maya2027"
+mayapy2027 = "mayaex:mayapy2027"
+
+[build-system]
+requires = ["uv_build>=0.12.2,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+dccex = { workspace = true }
