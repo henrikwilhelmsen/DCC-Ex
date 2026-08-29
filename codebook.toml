@@ -14,4 +14,5 @@ words = [
     "pkgs",
     "pyproject",
     "tmpl",
+    "uvx",
 ]
