@@ -114,6 +114,7 @@ def replace_template_text_variables(pkg: Package, txt: str) -> str:
     txt = txt.replace("{{ PKG_VERSION }}", pkg.pkg_version)
     txt = txt.replace("{{ DCC_VERSION }}", pkg.dcc_version)
     txt = txt.replace("{{ DCC }}", pkg.dcc)
+    txt = txt.replace("{{ SRC_NAME }}", pkg.src_name)
     return txt.replace("{{ DCC_VERSION }}", pkg.dcc_version)
 
 
@@ -179,7 +180,12 @@ def write_pkg_readme_file(pkg: Package, readme_file: Path) -> None:
     """
     tmpl_data = (SCRIPTS_DATA_DIR / "README.md").read_text()
     tmpl_data = replace_template_text_variables(pkg=pkg, txt=tmpl_data)
-    tmpl_data = tmpl_data.replace("{{ CMDS }}", " ,".join(f"`{x}`" for x in pkg.cmds))
+    versioned_cmds = [f"{cmd}{pkg.dcc_version}" for cmd in pkg.cmds]
+    tmpl_data = tmpl_data.replace(
+        "{{ VERSIONED_CMDS }}",
+        ", ".join(f"`{cmd}`" for cmd in versioned_cmds),
+    )
+    tmpl_data = tmpl_data.replace("{{ EXAMPLE_CMD }}", versioned_cmds[0])
     readme_file.write_text(tmpl_data)
 
 
