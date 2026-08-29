@@ -89,4 +89,5 @@ publish:
     - if: $CI_COMMIT_TAG
   extends: .base_uv
   stage: publish
-  script: uv publish --token ${PYPI_TOKEN}
+  resource_group: pypi-publish
+  script: uv publish --token ${PYPI_TOKEN} --check-url https://pypi.org/simple
