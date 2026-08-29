@@ -12,7 +12,9 @@ words = [
     "mobuex",
     "mobupy",
     "pkgs",
+    "pypi",
     "pyproject",
     "tmpl",
+    "trixie",
     "uvx",
 ]
