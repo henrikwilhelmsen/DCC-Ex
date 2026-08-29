@@ -177,8 +177,10 @@ def write_pkg_readme_file(pkg: Package, readme_file: Path) -> None:
     Writes to the readme_file directly, assumes that the file has already
     been created.
     """
-    # Write README - load template and replace {{ KEY }} with package data
-    # Keys to replace: NAME, DCC, CMDS
+    tmpl_data = (SCRIPTS_DATA_DIR / "README.md").read_text()
+    tmpl_data = replace_template_text_variables(pkg=pkg, txt=tmpl_data)
+    tmpl_data = tmpl_data.replace("{{ CMDS }}", " ,".join(f"`{x}`" for x in pkg.cmds))
+    readme_file.write_text(tmpl_data)
 
 
 def create_pkg_files(pkg: Package) -> None:
