@@ -11,6 +11,9 @@ dependencies = [
     "dccpath>=0.2.1",
 ]
 
+[project.urls]
+Repository = "https://git.hwanimation.tech/hwanimationtech/dccex"
+
 [dependency-groups]
 dev = [
     "ruff>=0.16.1",
