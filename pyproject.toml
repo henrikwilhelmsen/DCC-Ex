@@ -14,6 +14,13 @@ dependencies = [
 [project.urls]
 Repository = "https://git.hwanimation.tech/hwanimationtech/dccex"
 
+[project.scripts]
+"blender" = "dccex.cli:blender"
+"maya" = "dccex.cli:maya"
+"mayapy" = "dccex.cli:mayapy"
+"mobu" = "dccex.cli:mobu"
+"mobupy" = "dccex.cli:mobupy"
+
 [dependency-groups]
 dev = [
     "ruff>=0.16.1",
