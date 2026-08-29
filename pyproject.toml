@@ -1,7 +1,7 @@
 [project]
 name = "dccex"
 version = "0.1.0"
-description = "Add your description here"
+description = "Locate and run DCC applications"
 readme = "README.md"
 authors = [
     { name = "Henrik Wilhelmsen", email = "henrik@hwanimation.tech" }
