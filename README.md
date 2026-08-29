@@ -63,14 +63,12 @@ import sys
 
 from dccex import call_dcc_exe
 
-exit_code = call_dcc_exe(dcc_exe="blender", version="5")
+exit_code = call_dcc_exe(dcc_exe="blender", version="5", args=["--version"])
 sys.exit(exit_code)
 ```
 
 The supported executable names are `"blender"`, `"maya"`, `"mayapy"`,
-`"mobu"`, and `"mobupy"`. Arguments are read from `sys.argv[1:]`, so a
-library wrapper can set up its own command-line interface before calling
-`call_dcc_exe`.
+`"mobu"`, and `"mobupy"`.
 
 ## Development
 
