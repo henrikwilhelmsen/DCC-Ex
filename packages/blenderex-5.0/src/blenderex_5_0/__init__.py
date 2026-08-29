@@ -13,6 +13,7 @@ This package has been auto-generated as part of the
 """
 
 import logging
+import sys
 
 from dccex import call_dcc_exe
 
@@ -30,4 +31,4 @@ def setup_logging() -> None:
 def blender() -> None:
     """Run blender."""
     setup_logging()
-    call_dcc_exe(dcc_exe="blender", version="5.0")
+    sys.exit(call_dcc_exe(dcc_exe="blender", version="5.0"))

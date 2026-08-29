@@ -13,6 +13,7 @@ This package has been auto-generated as part of the
 """
 
 import logging
+import sys
 
 from dccex import call_dcc_exe
 
@@ -30,10 +31,10 @@ def setup_logging() -> None:
 def maya() -> None:
     """Run maya."""
     setup_logging()
-    call_dcc_exe(dcc_exe="maya", version="2024")
+    sys.exit(call_dcc_exe(dcc_exe="maya", version="2024"))
 
 
 def mayapy() -> None:
     """Run mayapy."""
     setup_logging()
-    call_dcc_exe(dcc_exe="mayapy", version="2024")
+    sys.exit(call_dcc_exe(dcc_exe="mayapy", version="2024"))

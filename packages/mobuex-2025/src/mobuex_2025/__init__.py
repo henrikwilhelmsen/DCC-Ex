@@ -13,6 +13,7 @@ This package has been auto-generated as part of the
 """
 
 import logging
+import sys
 
 from dccex import call_dcc_exe
 
@@ -30,10 +31,10 @@ def setup_logging() -> None:
 def mobu() -> None:
     """Run mobu."""
     setup_logging()
-    call_dcc_exe(dcc_exe="mobu", version="2025")
+    sys.exit(call_dcc_exe(dcc_exe="mobu", version="2025"))
 
 
 def mobupy() -> None:
     """Run mobupy."""
     setup_logging()
-    call_dcc_exe(dcc_exe="mobupy", version="2025")
+    sys.exit(call_dcc_exe(dcc_exe="mobupy", version="2025"))
