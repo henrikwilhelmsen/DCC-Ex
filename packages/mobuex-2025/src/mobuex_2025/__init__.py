@@ -4,9 +4,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at <https://mozilla.org/MPL/2.0/>.
 
-"""A CLI wrapper for blender.
+"""A CLI wrapper for mobu.
 
-Adds a command that will locate and run the blender executable.
+Adds a command that will locate and run the mobu executable.
 
 This package has been auto-generated as part of the
 `dccex` package to add the specific DCC versioned command.
@@ -27,7 +27,13 @@ def setup_logging() -> None:
     )
 
 
-def blender() -> None:
-    """Run blender."""
+def mobu() -> None:
+    """Run mobu."""
     setup_logging()
-    call_dcc_exe(dcc_exe="blender", version="5.2")
+    call_dcc_exe(dcc_exe="mobu", version="2025")
+
+
+def mobupy() -> None:
+    """Run mobupy."""
+    setup_logging()
+    call_dcc_exe(dcc_exe="mobupy", version="2025")

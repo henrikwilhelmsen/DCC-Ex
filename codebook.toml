@@ -1,10 +1,17 @@
 words = [
+    "dataclass",
     "dccex",
     "dccpath",
+    "fns",
+    "levelname",
+    "linters",
     "mayaex",
     "mayaexec",
     "mayapy",
     "mobu",
     "mobuex",
     "mobupy",
+    "pkgs",
+    "pyproject",
+    "tmpl",
 ]

@@ -1,8 +1,8 @@
 [project]
-name = "blenderex-5.2"
+name = "mobuex-2024"
 version = "0.1.0"
 requires-python = ">=3.11"
-description = "CLI to locate and run blender 5.2"
+description = "CLI to locate and run mobu 2024"
 readme = "README.md"
 license = "MPL-2.0"
 license-files = ["LICENSE"]
@@ -19,4 +19,5 @@ build-backend = "uv_build"
 dccex = { workspace = true }
 
 [project.scripts]
-"blender5.2" = "blenderex_5_2:blender"
+"mobu2024" = "mobuex_2024:mobu"
+"mobupy2024" = "mobuex_2024:mobupy"

@@ -4,17 +4,71 @@ requires-python = ">=3.14"
 
 [manifest]
 members = [
-    "blenderex",
+    "blenderex-4",
+    "blenderex-4-5",
+    "blenderex-5",
+    "blenderex-5-0",
+    "blenderex-5-1",
     "blenderex-5-2",
     "dccex",
-    "mayaex",
-    "mobuex",
+    "mayaex-2024",
+    "mayaex-2025",
+    "mayaex-2026",
+    "mayaex-2027",
+    "mobuex-2024",
+    "mobuex-2025",
+    "mobuex-2026",
+    "mobuex-2027",
 ]
 
 [[package]]
-name = "blenderex"
+name = "blenderex-4"
 version = "0.1.0"
-source = { editable = "packages/blenderex" }
+source = { editable = "packages/blenderex-4" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "blenderex-4-5"
+version = "0.1.0"
+source = { editable = "packages/blenderex-4.5" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "blenderex-5"
+version = "0.1.0"
+source = { editable = "packages/blenderex-5" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "blenderex-5-0"
+version = "0.1.0"
+source = { editable = "packages/blenderex-5.0" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "blenderex-5-1"
+version = "0.1.0"
+source = { editable = "packages/blenderex-5.1" }
 dependencies = [
     { name = "dccex" },
 ]
@@ -27,11 +81,11 @@ name = "blenderex-5-2"
 version = "0.1.0"
 source = { editable = "packages/blenderex-5.2" }
 dependencies = [
-    { name = "blenderex" },
+    { name = "dccex" },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "blenderex", editable = "packages/blenderex" }]
+requires-dist = [{ name = "dccex", editable = "." }]
 
 [[package]]
 name = "dccex"
@@ -66,9 +120,9 @@ wheels = [
 ]
 
 [[package]]
-name = "mayaex"
+name = "mayaex-2024"
 version = "0.1.0"
-source = { editable = "packages/mayaex" }
+source = { editable = "packages/mayaex-2024" }
 dependencies = [
     { name = "dccex" },
 ]
@@ -77,9 +131,75 @@ dependencies = [
 requires-dist = [{ name = "dccex", editable = "." }]
 
 [[package]]
-name = "mobuex"
+name = "mayaex-2025"
 version = "0.1.0"
-source = { editable = "packages/mobuex" }
+source = { editable = "packages/mayaex-2025" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mayaex-2026"
+version = "0.1.0"
+source = { editable = "packages/mayaex-2026" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mayaex-2027"
+version = "0.1.0"
+source = { editable = "packages/mayaex-2027" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mobuex-2024"
+version = "0.1.0"
+source = { editable = "packages/mobuex-2024" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mobuex-2025"
+version = "0.1.0"
+source = { editable = "packages/mobuex-2025" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mobuex-2026"
+version = "0.1.0"
+source = { editable = "packages/mobuex-2026" }
+dependencies = [
+    { name = "dccex" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "dccex", editable = "." }]
+
+[[package]]
+name = "mobuex-2027"
+version = "0.1.0"
+source = { editable = "packages/mobuex-2027" }
 dependencies = [
     { name = "dccex" },
 ]

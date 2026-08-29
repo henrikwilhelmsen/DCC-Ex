@@ -7,8 +7,16 @@ docstring-code-format = true
 
 [lint]
 select = ["ALL"]
-per-file-ignores = { "tests/*" = [
-    "ARG001", # Unused argument (pytest fixtures)
-    "S101",   # Assert usage
-] }
+per-file-ignores = {
+    "tests/*" = [
+        "ARG001", # Unused argument (pytest fixtures)
+        "S101",   # Assert usage
+    ] ,
+    "**/data/*" = [
+        "INP001", # Implicit namespace package
+    ],
+    "**/scripts/*" = [
+        "INP001", # Implicit namespace package
+    ]
+}
 pydocstyle.convention = "google"

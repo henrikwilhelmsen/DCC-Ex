@@ -30,4 +30,4 @@ def setup_logging() -> None:
 def blender() -> None:
     """Run blender."""
     setup_logging()
-    call_dcc_exe(dcc_exe="blender", version="5.2")
+    call_dcc_exe(dcc_exe="blender", version="4.5")

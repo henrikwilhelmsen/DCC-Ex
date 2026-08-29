@@ -4,9 +4,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at <https://mozilla.org/MPL/2.0/>.
 
-"""A CLI wrapper for blender.
+"""A CLI wrapper for maya.
 
-Adds a command that will locate and run the blender executable.
+Adds a command that will locate and run the maya executable.
 
 This package has been auto-generated as part of the
 `dccex` package to add the specific DCC versioned command.
@@ -27,7 +27,13 @@ def setup_logging() -> None:
     )
 
 
-def blender() -> None:
-    """Run blender."""
+def maya() -> None:
+    """Run maya."""
     setup_logging()
-    call_dcc_exe(dcc_exe="blender", version="5.2")
+    call_dcc_exe(dcc_exe="maya", version="2026")
+
+
+def mayapy() -> None:
+    """Run mayapy."""
+    setup_logging()
+    call_dcc_exe(dcc_exe="mayapy", version="2026")

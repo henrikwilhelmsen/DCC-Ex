@@ -1,8 +1,16 @@
+# Copyright (C) 2026 Henrik Wilhelmsen.
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at <https://mozilla.org/MPL/2.0/>.
+
+"""DCCEX - A package for finding and running DCC executables."""
+
 import logging
 import os
 import subprocess
 import sys
-from enum import StrEnum
+from typing import Literal
 
 from dccpath import (
     DCCPathError,
@@ -16,28 +24,29 @@ from dccpath import (
 logger = logging.getLogger(__name__)
 
 
-class DCC(StrEnum):
-    MAYA = "maya"
-    MAYAPY = "mayapy"
-    MOBU = "mobu"
-    MOBUPY = "mobupy"
-    BLENDER = "blender"
+DCC_EXE = Literal["maya", "mayapy", "mobu", "mobupy", "blender"]
 
 
-def call_dcc(dcc: DCC, version: str) -> int:
-    match dcc:
-        case DCC.MAYA:
+def call_dcc_exe(dcc_exe: DCC_EXE, version: str) -> int:
+    """Locate and call the given DCC executable for the given version.
+
+    Returns:
+        The return code of the subprocess call to the executable, or 1 if an error
+        occurred during setup.
+    """
+    match dcc_exe:
+        case "maya":
             search_fn = get_maya
-        case DCC.MAYAPY:
+        case "mayapy":
             search_fn = get_mayapy
-        case DCC.MOBU:
+        case "mobu":
             search_fn = get_mobu
-        case DCC.MOBUPY:
+        case "mobupy":
             search_fn = get_mobupy
-        case DCC.BLENDER:
+        case "blender":
             search_fn = get_blender
         case _:
-            logger.error("invalid DCC argument: %s", dcc)
+            logger.error("invalid DCC argument: %s", dcc_exe)
             return 1
 
     try:
@@ -45,7 +54,7 @@ def call_dcc(dcc: DCC, version: str) -> int:
     except DCCPathError:
         logger.exception(
             "an error occurred when trying to get the %s executable",
-            dcc.value,
+            dcc_exe,
         )
         return 1
 

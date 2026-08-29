@@ -1,8 +1,8 @@
 [project]
-name = "blenderex-5.2"
+name = "mayaex-2026"
 version = "0.1.0"
 requires-python = ">=3.11"
-description = "CLI to locate and run blender 5.2"
+description = "CLI to locate and run maya 2026"
 readme = "README.md"
 license = "MPL-2.0"
 license-files = ["LICENSE"]
@@ -19,4 +19,5 @@ build-backend = "uv_build"
 dccex = { workspace = true }
 
 [project.scripts]
-"blender5.2" = "blenderex_5_2:blender"
+"maya2026" = "mayaex_2026:maya"
+"mayapy2026" = "mayaex_2026:mayapy"
