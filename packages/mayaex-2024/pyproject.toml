@@ -11,6 +11,9 @@ authors = [
 ]
 dependencies = ["dccex"]
 
+[project.urls]
+Repository = "https://git.hwanimation.tech/hwanimationtech/dccex"
+
 [build-system]
 requires = ["uv_build>=0.12.2,<0.13.0"]
 build-backend = "uv_build"
