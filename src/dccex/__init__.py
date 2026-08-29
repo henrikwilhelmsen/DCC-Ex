@@ -9,7 +9,6 @@
 import logging
 import os
 import subprocess
-import sys
 from typing import Literal
 
 from dccpath import (
@@ -24,16 +23,28 @@ from dccpath import (
 logger = logging.getLogger(__name__)
 
 
-DCC_EXE = Literal["maya", "mayapy", "mobu", "mobupy", "blender"]
+SupportedDCCs = Literal["maya", "mayapy", "mobu", "mobupy", "blender"]
 
 
-def call_dcc_exe(dcc_exe: DCC_EXE, version: str) -> int:
+def call_dcc_exe(
+    dcc_exe: SupportedDCCs,
+    version: str,
+    args: list[str] | None = None,
+) -> int:
     """Locate and call the given DCC executable for the given version.
+
+    Args:
+        dcc_exe: The DCC to call
+        version: The DCC version
+        args: Optional extra arguments to pass to the DCC
 
     Returns:
         The return code of the subprocess call to the executable, or 1 if an error
         occurred during setup.
     """
+    if args is None:
+        args = []
+
     match dcc_exe:
         case "maya":
             search_fn = get_maya
@@ -60,7 +71,7 @@ def call_dcc_exe(dcc_exe: DCC_EXE, version: str) -> int:
 
     logger.debug("running dcc executable: %s", executable)
     return subprocess.call(  # noqa: S603
-        [executable, *sys.argv[1:]],
+        [executable, *args],
         env=os.environ,
         encoding="utf-8",
         text=True,

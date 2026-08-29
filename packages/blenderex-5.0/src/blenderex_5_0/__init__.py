@@ -31,4 +31,9 @@ def setup_logging() -> None:
 def blender() -> None:
     """Run blender."""
     setup_logging()
-    sys.exit(call_dcc_exe(dcc_exe="blender", version="5.0"))
+    sys.exit(
+        call_dcc_exe(dcc_exe="blender",
+        version="5.0",
+        args=sys.argv[1:],
+        ),
+    )

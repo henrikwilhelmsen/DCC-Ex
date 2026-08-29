@@ -176,7 +176,12 @@ def write_pkg_init_file(pkg: Package, init_file: Path) -> None:
 def {{ CMD }}() -> None:
     """Run {{ CMD }}."""
     setup_logging()
-    sys.exit(call_dcc_exe(dcc_exe="{{ CMD }}", version="{{ VERSION }}"))
+    sys.exit(
+        call_dcc_exe(dcc_exe="{{ CMD }}",
+        version="{{ VERSION }}",
+        args=sys.argv[1:],
+        ),
+    )
 '''
     for cmd in pkg.cmds:
         cmd_fn = cmd_fn_tmpl.replace("{{ CMD }}", cmd)

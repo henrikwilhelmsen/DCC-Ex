@@ -31,10 +31,20 @@ def setup_logging() -> None:
 def maya() -> None:
     """Run maya."""
     setup_logging()
-    sys.exit(call_dcc_exe(dcc_exe="maya", version="2025"))
+    sys.exit(
+        call_dcc_exe(dcc_exe="maya",
+        version="2025",
+        args=sys.argv[1:],
+        ),
+    )
 
 
 def mayapy() -> None:
     """Run mayapy."""
     setup_logging()
-    sys.exit(call_dcc_exe(dcc_exe="mayapy", version="2025"))
+    sys.exit(
+        call_dcc_exe(dcc_exe="mayapy",
+        version="2025",
+        args=sys.argv[1:],
+        ),
+    )
