@@ -28,9 +28,9 @@ uv add blenderex-5.0
 ```
 
 ```python
-from blenderex_5_0 import blender5.0
+from blenderex_5_0 import blender
 
-blender5.0()
+blender()
 ```
 
 The requested blender version must be installed locally.

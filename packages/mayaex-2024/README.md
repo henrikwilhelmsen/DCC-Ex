@@ -28,9 +28,9 @@ uv add mayaex-2024
 ```
 
 ```python
-from mayaex_2024 import maya2024
+from mayaex_2024 import maya
 
-maya2024()
+maya()
 ```
 
 The requested maya version must be installed locally.

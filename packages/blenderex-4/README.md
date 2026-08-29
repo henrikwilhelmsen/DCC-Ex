@@ -28,9 +28,9 @@ uv add blenderex-4
 ```
 
 ```python
-from blenderex_4 import blender4
+from blenderex_4 import blender
 
-blender4()
+blender()
 ```
 
 The requested blender version must be installed locally.

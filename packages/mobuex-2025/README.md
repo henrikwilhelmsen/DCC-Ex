@@ -28,9 +28,9 @@ uv add mobuex-2025
 ```
 
 ```python
-from mobuex_2025 import mobu2025
+from mobuex_2025 import mobu
 
-mobu2025()
+mobu()
 ```
 
 The requested mobu version must be installed locally.

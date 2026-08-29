@@ -1,6 +1,6 @@
 [project]
 name = "mayaex-2024"
-version = "0.1.0"
+version = "0.1.1"
 requires-python = ">=3.11"
 description = "CLI to locate and run maya 2024"
 readme = "README.md"

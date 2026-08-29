@@ -52,6 +52,15 @@ class Package:
         """Get the name of the Python package name, with . and - replaced with _."""
         return self.versioned_name.replace("-", "_").replace(".", "_")
 
+    @property
+    def versioned_cmds(self) -> list[str]:
+        """Get a cmds list with dcc_version added to the end of each cmd.
+
+        For use with CLI args, there are no separators e.g. for Blender 5.0 the property
+        will return blender5.0
+        """
+        return [f"{cmd}{self.dcc_version}" for cmd in self.cmds]
+
 
 @dataclass
 class PackagePaths:
@@ -111,10 +120,15 @@ def replace_template_text_variables(pkg: Package, txt: str) -> str:
     """
     txt = txt.replace("{{ NAME }}", pkg.name)
     txt = txt.replace("{{ VERSIONED_NAME }}", pkg.versioned_name)
+    txt = txt.replace("{{ SRC_NAME }}", pkg.src_name)
     txt = txt.replace("{{ PKG_VERSION }}", pkg.pkg_version)
     txt = txt.replace("{{ DCC_VERSION }}", pkg.dcc_version)
     txt = txt.replace("{{ DCC }}", pkg.dcc)
     txt = txt.replace("{{ SRC_NAME }}", pkg.src_name)
+    txt = txt.replace(
+        "{{ VERSIONED_CMDS }}",
+        ", ".join(f"`{cmd}`" for cmd in pkg.versioned_cmds),
+    )
     return txt.replace("{{ DCC_VERSION }}", pkg.dcc_version)
 
 
@@ -180,12 +194,12 @@ def write_pkg_readme_file(pkg: Package, readme_file: Path) -> None:
     """
     tmpl_data = (SCRIPTS_DATA_DIR / "README.md").read_text()
     tmpl_data = replace_template_text_variables(pkg=pkg, txt=tmpl_data)
-    versioned_cmds = [f"{cmd}{pkg.dcc_version}" for cmd in pkg.cmds]
-    tmpl_data = tmpl_data.replace(
-        "{{ VERSIONED_CMDS }}",
-        ", ".join(f"`{cmd}`" for cmd in versioned_cmds),
-    )
-    tmpl_data = tmpl_data.replace("{{ EXAMPLE_CMD }}", versioned_cmds[0])
+
+    # Versioned commands are used in the command-line examples
+    tmpl_data = tmpl_data.replace("{{ EXAMPLE_CMD }}", pkg.versioned_cmds[0])
+    # The regular, non-versioned command is used in the Python examples
+    tmpl_data = tmpl_data.replace("{{ CMD }}", pkg.cmds[0])
+
     readme_file.write_text(tmpl_data)
 
 

@@ -28,9 +28,9 @@ uv add {{ VERSIONED_NAME }}
 ```
 
 ```python
-from {{ SRC_NAME }} import {{ EXAMPLE_CMD }}
+from {{ SRC_NAME }} import {{ CMD }}
 
-{{ EXAMPLE_CMD }}()
+{{ CMD }}()
 ```
 
 The requested {{ DCC }} version must be installed locally.

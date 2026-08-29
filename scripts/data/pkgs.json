@@ -2,98 +2,98 @@
   "packages":[
     {
       "name": "mayaex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2024",
       "dcc": "maya",
       "cmds": ["maya", "mayapy"]
     },
     {
       "name": "mayaex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2025",
       "dcc": "maya",
       "cmds": ["maya", "mayapy"]
     },
     {
       "name": "mayaex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2026",
       "dcc": "maya",
       "cmds": ["maya", "mayapy"]
     },
     {
       "name": "mayaex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2027",
       "dcc": "maya",
       "cmds": ["maya", "mayapy"]
     },
     {
       "name": "mobuex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2024",
       "dcc": "mobu",
       "cmds": ["mobu", "mobupy"]
     },
     {
       "name": "mobuex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2025",
       "dcc": "mobu",
       "cmds": ["mobu", "mobupy"]
     },
     {
       "name": "mobuex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2026",
       "dcc": "mobu",
       "cmds": ["mobu", "mobupy"]
     },
     {
       "name": "mobuex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "2027",
       "dcc": "mobu",
       "cmds": ["mobu", "mobupy"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "4",
       "dcc": "blender",
       "cmds": ["blender"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "4.5",
       "dcc": "blender",
       "cmds": ["blender"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "5",
       "dcc": "blender",
       "cmds": ["blender"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "5.0",
       "dcc": "blender",
       "cmds": ["blender"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "5.1",
       "dcc": "blender",
       "cmds": ["blender"]
     },
     {
       "name": "blenderex",
-      "pkg_version": "0.1.0",
+      "pkg_version": "0.1.1",
       "dcc_version": "5.2",
       "dcc": "blender",
       "cmds": ["blender"]
