@@ -32,8 +32,9 @@ def blender() -> None:
     """Run blender."""
     setup_logging()
     sys.exit(
-        call_dcc_exe(dcc_exe="blender",
-        version="4.5",
-        args=sys.argv[1:],
+        call_dcc_exe(
+            dcc_exe="blender",
+            version="4.5",
+            args=sys.argv[1:],
         ),
     )

@@ -32,9 +32,10 @@ def mobu() -> None:
     """Run mobu."""
     setup_logging()
     sys.exit(
-        call_dcc_exe(dcc_exe="mobu",
-        version="2025",
-        args=sys.argv[1:],
+        call_dcc_exe(
+            dcc_exe="mobu",
+            version="2025",
+            args=sys.argv[1:],
         ),
     )
 
@@ -43,8 +44,9 @@ def mobupy() -> None:
     """Run mobupy."""
     setup_logging()
     sys.exit(
-        call_dcc_exe(dcc_exe="mobupy",
-        version="2025",
-        args=sys.argv[1:],
+        call_dcc_exe(
+            dcc_exe="mobupy",
+            version="2025",
+            args=sys.argv[1:],
         ),
     )

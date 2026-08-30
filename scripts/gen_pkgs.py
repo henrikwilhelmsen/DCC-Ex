@@ -177,9 +177,10 @@ def {{ CMD }}() -> None:
     """Run {{ CMD }}."""
     setup_logging()
     sys.exit(
-        call_dcc_exe(dcc_exe="{{ CMD }}",
-        version="{{ VERSION }}",
-        args=sys.argv[1:],
+        call_dcc_exe(
+            dcc_exe="{{ CMD }}",
+            version="{{ VERSION }}",
+            args=sys.argv[1:],
         ),
     )
 '''
