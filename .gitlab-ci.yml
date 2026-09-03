@@ -62,7 +62,26 @@ build:
       - dist/
     expire_in: 1 week
   script:
-    - uv build --no-cache --all-packages
+    - |
+      if [ -n "${CI_COMMIT_TAG:-}" ]; then
+        package="${CI_COMMIT_TAG%/v*}"
+        version="${CI_COMMIT_TAG##*/v}"
+
+        if [ "${package}" = "${CI_COMMIT_TAG}" ] || [ -z "${package}" ] || [ -z "${version}" ]; then
+          echo "Tag must use the format <package>/v<version>; got ${CI_COMMIT_TAG}."
+          exit 1
+        fi
+
+        package_version="$(uv version --package "${package}" --short)"
+        if [ "${version}" != "${package_version}" ]; then
+          echo "Tag version ${version} does not match ${package} version ${package_version}."
+          exit 1
+        fi
+
+        uv build --no-cache --package "${package}"
+      else
+        uv build --no-cache --all-packages
+      fi
 
 ruff_check:
   extends: .base_ruff
