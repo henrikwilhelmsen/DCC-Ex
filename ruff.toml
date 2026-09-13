@@ -7,6 +7,9 @@ docstring-code-format = true
 
 [lint]
 select = ["ALL"]
+ignore = [
+    "COM812"      # Trailing comma, handled by formatter and produces a warning
+]
 per-file-ignores = {
     "tests/*" = [
         "ARG001", # Unused argument (pytest fixtures)
