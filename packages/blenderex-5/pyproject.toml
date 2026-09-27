@@ -21,5 +21,8 @@ build-backend = "uv_build"
 [tool.uv.sources]
 dccex = { workspace = true }
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [project.scripts]
 "blender5" = "blenderex_5:blender"

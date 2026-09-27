@@ -21,6 +21,9 @@ build-backend = "uv_build"
 [tool.uv.sources]
 dccex = { workspace = true }
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [project.scripts]
 "mobu2024" = "mobuex_2024:mobu"
 "mobupy2024" = "mobuex_2024:mobupy"

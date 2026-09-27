@@ -21,6 +21,9 @@ build-backend = "uv_build"
 [tool.uv.sources]
 dccex = { workspace = true }
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [project.scripts]
 "maya2025" = "mayaex_2025:maya"
 "mayapy2025" = "mayaex_2025:mayapy"
