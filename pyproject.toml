@@ -17,7 +17,7 @@ Repository = "https://git.hwanimation.tech/hwanimationtech/dccex"
 [dependency-groups]
 dev = [
     "ruff>=0.17.0",
-    "ty>=0.0.86",
+    "ty>=0.0.87",
 ]
 
 [build-system]
