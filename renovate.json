@@ -14,7 +14,10 @@
       "enabled": false
     },
     {
-      "matchDepTypes": ["devDependencies"],
+      "matchManagers": ["pep621"],
+      "matchJsonata": [
+        "depType = 'dependency-groups' and managerData.depGroup = 'dev'"
+      ],
       "automerge": true
     }
   ]
