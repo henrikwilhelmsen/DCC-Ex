@@ -15,7 +15,7 @@ dependencies = ["dccex"]
 Repository = "https://git.hwanimation.tech/hwanimationtech/dccex"
 
 [build-system]
-requires = ["uv_build>=0.13.2,<0.13.3"]
+requires = ["uv_build>=0.13.4,<0.13.5"]
 build-backend = "uv_build"
 
 [tool.uv.sources]
